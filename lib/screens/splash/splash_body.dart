@@ -88,6 +88,7 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody> {
   String nextPage = "";
+  String experaiance = '';
   @override
   void initState() {
     initNextPage();
