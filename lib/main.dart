@@ -4,15 +4,15 @@ import 'package:smile_shope/layout/homeScreen.dart';
 import 'package:smile_shope/screens/onboarding/onboarding.dart';
 import 'package:smile_shope/screens/splash/splash.dart';
 import 'package:smile_shope/shared/networks/local/Cache_Helper.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-int? initscreen = 0;
+// int? initscreen = 0;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences preferences = await SharedPreferences.getInstance();
-  initscreen = preferences.getInt('initScreen');
-  await preferences.setInt('initScreen', 1);
+  await CacheHelper().init();
+  // SharedPreferences preferences = await SharedPreferences.getInstance();
+  // initscreen = preferences.getInt('initScreen');
+  // await preferences.setInt('initScreen', 1);
   // WidgetsFlutterBinding.ensureInitialized();
   // await CashHelper.init();
 

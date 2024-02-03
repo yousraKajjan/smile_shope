@@ -40,7 +40,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
         body: 'بعد طلب المنتج المراد يتم توصيله إليك \n بكل سرعة وسهولة '),
   ];
   void submit(context) {
-    CashHelper.saveData(key: 'onBoarding', value: true).then((value) {
+    CacheHelper().saveData(key: 'onBoarding', value: true).then((value) {
       NavigateAndFinish(context, SmileShopeHomeScreen());
       // navigatAndFinishTo(context, HomeLayout());
     });

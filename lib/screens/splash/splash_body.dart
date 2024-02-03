@@ -77,6 +77,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:smile_shope/main.dart';
+import 'package:smile_shope/shared/networks/local/Cache_Helper.dart';
 import 'package:smile_shope/shared/utils/assets.dart';
 
 class SplashBody extends StatefulWidget {
@@ -91,16 +92,22 @@ class _SplashBodyState extends State<SplashBody> {
   String experaiance = '';
   @override
   void initState() {
+    bool isonBoarding = CacheHelper().getData(key: "onBoarding") ?? false;
+    if (isonBoarding == true) {
+      nextPage = '/home';
+    } else {
+      nextPage = '/onboard';
+    }
     initNextPage();
     super.initState();
   }
 
   initNextPage() async {
-    if (initscreen == 0 || initscreen == null) {
-      nextPage = "/onboard";
-    } else {
-      nextPage = '/home';
-    }
+    // if (initscreen == 0 || initscreen == null) {
+    //   nextPage = "/onboard";
+    // } else {
+    //   nextPage = '/home';
+    // }
 
     await Future.delayed(
       const Duration(seconds: 4),
